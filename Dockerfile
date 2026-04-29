@@ -1,5 +1,5 @@
 # Se parte de la imagen oficial
-FROM nodered/node-red
+FROM nodered/node-red:4.1.8-20
 
 # Cambio a usuario a root
 USER root
@@ -41,4 +41,3 @@ WORKDIR /usr/src/node-red
 
 # Se copian los flows y configuraciones.
 COPY flows.json /data/flows.json
-COPY settings.js /data/settings.js
