@@ -14,12 +14,13 @@ RUN apk add --no-cache \
 
 # Nuevo certificado en 
 RUN mkdir -p /data/opcua/certificates && \
+    printf "[req]\nprompt=no\ndistinguished_name=dn\nx509_extensions=v3\n\n[dn]\nCN=NodeRED-OPCUA\n\n[v3]\nsubjectAltName=URI:urn:NodeRED-OPCUA\n" > /tmp/opcua.cnf && \
     openssl req -x509 -newkey rsa:2048 -nodes \
       -keyout /data/opcua/certificates/server_key_2048.pem \
       -out /data/opcua/certificates/server_selfsigned_cert_2048.pem \
       -days 3650 \
-      -sha256 \
-      -subj "/C=ES/L=Madrid/O=Universidad/CN=NodeRED-OPCUA" && \
+      -config /tmp/opcua.cnf \
+      -extensions v3 && \
     chown -R node-red:node-red /data/opcua
 
 # Cambio usuario node-red
