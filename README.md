@@ -1,24 +1,4 @@
 
-## Node-RED
-- Actualizamos la RPI:
-```bash
-sudo apt-get update
-sudo apt-get upgrade
-```
-
-- Eliminación de  node-red
-
-```bash
-sudo npm remove -g node-red node-red-admin
-rm -R ~/.node-red
-```
-
-- Actualizamos npm:
-
-```bash 
-sudo npm install -g npm@11.13.0
-```
-
 ## Instalación de Node-RED en local
 
 - Instalación de node-red
