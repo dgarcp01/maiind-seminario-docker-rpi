@@ -1,0 +1,521 @@
+[
+    {
+        "id": "81f28e04d1430eac",
+        "type": "tab",
+        "label": "OPC_SERVER",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "bf8181823b22cc27",
+        "type": "group",
+        "z": "81f28e04d1430eac",
+        "name": "Simulación (SOLO SI NO SE TIENE DATOS MODBUS)",
+        "style": {
+            "label": true,
+            "color": "#ff0000"
+        },
+        "nodes": [
+            "6ce1daaab88b73b1",
+            "65c443034bd8f9f0",
+            "f8bcf25e69ed889b",
+            "61295f766324f26f",
+            "d9cd9fb41ac49f10"
+        ],
+        "x": 74,
+        "y": 339,
+        "w": 732,
+        "h": 162
+    },
+    {
+        "id": "1283db306e006e5e",
+        "type": "group",
+        "z": "81f28e04d1430eac",
+        "name": "Entrada de datos MODBUS",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "7528ba242d530a45",
+            "950313e972f4059e",
+            "2a8fafd4a686da51",
+            "2fe86f4fd282be6b"
+        ],
+        "x": 74,
+        "y": 79,
+        "w": 812,
+        "h": 202
+    },
+    {
+        "id": "a340d44ce25a9178",
+        "type": "group",
+        "z": "81f28e04d1430eac",
+        "name": "Instacia del servidor OPC",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "e858cc4574cdc6d5",
+            "508b298355c0fbb5"
+        ],
+        "x": 74,
+        "y": 559,
+        "w": 732,
+        "h": 122
+    },
+    {
+        "id": "adf0a11186ab02f8",
+        "type": "group",
+        "z": "81f28e04d1430eac",
+        "name": "Envio datos a MODBUS",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "144b8ee223d034c0",
+            "f0d7a4c5fda958c2",
+            "68f7c3c88031909d",
+            "9ed15525ae8df6c6",
+            "17b5eca7956aece8",
+            "2e0e7a6c5ef1771a",
+            "65df92127bbceb2a",
+            "d080f446db3319c8"
+        ],
+        "x": 74,
+        "y": 719,
+        "w": 1132,
+        "h": 229.5
+    },
+    {
+        "id": "6ce1daaab88b73b1",
+        "type": "comment",
+        "z": "81f28e04d1430eac",
+        "g": "bf8181823b22cc27",
+        "name": "(SUSTITUIR POR LA INFORMACIÓN LEÍDA POR MODBUS) Simulación cambios en las variables",
+        "info": "",
+        "x": 440,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "65c443034bd8f9f0",
+        "type": "inject",
+        "z": "81f28e04d1430eac",
+        "g": "bf8181823b22cc27",
+        "name": "Tm",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "0.1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.01",
+        "topic": "",
+        "payload": "{\"EN_escritura\":{\"Value\":null,\"type\":\"BOOL\",\"Reg\":0,\"Pos\":0,\"Permisos\":\"R\",\"Descripcion\":\"Bit de escritura por MODBUS\"},\"KC\":{\"Value\":null,\"type\":\"BOOL\",\"Reg\":0,\"Pos\":1,\"Permisos\":\"R\",\"Descripcion\":\"Resistencias de calentamiento\"},\"KE\":{\"Value\":null,\"type\":\"BOOL\",\"Reg\":0,\"Pos\":2,\"Permisos\":\"R\",\"Descripcion\":\"Bit encendido de la refrigeración\"},\"TR\":{\"Value\":null,\"type\":\"BOOL\",\"Reg\":0,\"Pos\":3,\"Permisos\":\"R\",\"Descripcion\":\"Termostato\"},\"Error_KC\":{\"Value\":null,\"type\":\"BOOL\",\"Reg\":0,\"Pos\":4,\"Permisos\":\"R\",\"Descripcion\":\"Error en las resistencias\"},\"Temp\":{\"Value\":null,\"type\":\"REAL\",\"Reg\":1,\"Pos\":0,\"Permisos\":\"R\",\"Descripcion\":\"TEMPERATURA DEL HORNO\"},\"SP_Temp\":{\"Value\":null,\"type\":\"INT\",\"Reg\":3,\"Pos\":0,\"Scale\":10,\"Permisos\":\"R\",\"Descripcion\":\"Set point de temperatura convertido a INT (/10)\"},\"NumSrv\":{\"Value\":null,\"type\":\"INT\",\"Reg\":4,\"Pos\":0,\"Permisos\":\"R\",\"Descripcion\":\"Servicio activo en el ME\"},\"MOD_NSrv\":{\"Value\":null,\"type\":\"INT\",\"Reg\":5,\"Pos\":0,\"Scale\":1,\"Permisos\":\"W\",\"Descripcion\":\"INT para la selección de la fase de equipamiento a ejecutar\"},\"MOD_START_MAN\":{\"Value\":null,\"type\":\"BOOL\",\"Reg\":6,\"Pos\":0,\"Permisos\":\"W\",\"Descripcion\":\"Bit para arrancar una fase de equipamiento\"},\"MOD_STOP_MAN\":{\"Value\":null,\"type\":\"BOOL\",\"Reg\":6,\"Pos\":1,\"Permisos\":\"W\",\"Descripcion\":\"Bit de parada de la fase de equipamiento\"},\"MOD_REARME_MAN\":{\"Value\":null,\"type\":\"BOOL\",\"Reg\":6,\"Pos\":2,\"Permisos\":\"W\",\"Descripcion\":\"Bit de reinicio de la fase de equipamiento\"},\"MOD_SP_TEnf\":{\"Value\":null,\"type\":\"INT\",\"Reg\":7,\"Pos\":0,\"Scale\":10,\"Permisos\":\"R\",\"Descripcion\":\"Set point de temperatura convertido a INT (/10)\"}}",
+        "payloadType": "json",
+        "x": 180,
+        "y": 460,
+        "wires": [
+            [
+                "f8bcf25e69ed889b"
+            ]
+        ]
+    },
+    {
+        "id": "f8bcf25e69ed889b",
+        "type": "function",
+        "z": "81f28e04d1430eac",
+        "g": "bf8181823b22cc27",
+        "name": "simula cambio en KC y temperatura",
+        "func": "// Se obtiene la variable t del contexto flow\nlet t = flow.get(\"t\");\n// Se obtienen los datos del flow\nlet ME_HORNO = flow.get(\"ME_HORNO\");\nlet f = 1/10;\nlet A = 200;\n\nlet KC = Math.sin(f*t*2*Math.PI) > 0\nlet KC_1 = Math.sin(f*t*2*Math.PI-0.1) > 0\nME_HORNO.Temp.Value  =  (1/11)*+KC*A + (1/11)*+KC_1*A + (9/11)*ME_HORNO.Temp.Value  \n\nME_HORNO.KC.Value = KC;\n\nmsg = {\"payload\":ME_HORNO.Temp.Value };\n\n\n\n\n// Se actualiza el tiempo t \nflow.set(\"t\",t+0.1);\nflow.set(\"ME_HORNO\",ME_HORNO);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "61295f766324f26f",
+        "type": "inject",
+        "z": "81f28e04d1430eac",
+        "g": "bf8181823b22cc27",
+        "name": "t0",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "data",
+                "v": "{\"EN_escritura\":{\"Value\":true,\"type\":\"BOOL\",\"Reg\":0,\"Pos\":0,\"Permisos\":\"R\",\"Descripcion\":\"Bit de escritura por MODBUS\"},\"KC\":{\"Value\":false,\"type\":\"BOOL\",\"Reg\":0,\"Pos\":1,\"Permisos\":\"R\",\"Descripcion\":\"Resistencias de calentamiento\"},\"KE\":{\"Value\":false,\"type\":\"BOOL\",\"Reg\":0,\"Pos\":2,\"Permisos\":\"R\",\"Descripcion\":\"Bit encendido de la refrigeración\"},\"TR\":{\"Value\":false,\"type\":\"BOOL\",\"Reg\":0,\"Pos\":3,\"Permisos\":\"R\",\"Descripcion\":\"Termostato\"},\"Error_KC\":{\"Value\":false,\"type\":\"BOOL\",\"Reg\":0,\"Pos\":4,\"Permisos\":\"R\",\"Descripcion\":\"Error en las resistencias\"},\"Temp\":{\"Value\":20,\"type\":\"REAL\",\"Reg\":1,\"Pos\":0,\"Permisos\":\"R\",\"Descripcion\":\"TEMPERATURA DEL HORNO\"},\"SP_Temp\":{\"Value\":80,\"type\":\"INT\",\"Reg\":3,\"Pos\":0,\"Scale\":10,\"Permisos\":\"R\",\"Descripcion\":\"Set point de temperatura convertido a INT (/10)\"},\"NumSrv\":{\"Value\":1,\"type\":\"INT\",\"Reg\":4,\"Pos\":0,\"Permisos\":\"R\",\"Descripcion\":\"Servicio activo en el ME\"},\"MOD_NSrv\":{\"Value\":0,\"type\":\"INT\",\"Reg\":5,\"Pos\":0,\"Scale\":1,\"Permisos\":\"W\",\"Descripcion\":\"INT para la selección de la fase de equipamiento a ejecutar\"},\"MOD_START_MAN\":{\"Value\":false,\"type\":\"BOOL\",\"Reg\":6,\"Pos\":0,\"Permisos\":\"W\",\"Descripcion\":\"Bit para arrancar una fase de equipamiento\"},\"MOD_STOP_MAN\":{\"Value\":false,\"type\":\"BOOL\",\"Reg\":6,\"Pos\":1,\"Permisos\":\"W\",\"Descripcion\":\"Bit de parada de la fase de equipamiento\"},\"MOD_REARME_MAN\":{\"Value\":false,\"type\":\"BOOL\",\"Reg\":6,\"Pos\":2,\"Permisos\":\"W\",\"Descripcion\":\"Bit de reinicio de la fase de equipamiento\"},\"MOD_SP_TEnf\":{\"Value\":false,\"type\":\"INT\",\"Reg\":7,\"Pos\":0,\"Scale\":10,\"Permisos\":\"R\",\"Descripcion\":\"Set point de temperatura convertido a INT (/10)\"}}",
+                "vt": "json"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.001",
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 180,
+        "y": 420,
+        "wires": [
+            [
+                "d9cd9fb41ac49f10"
+            ]
+        ]
+    },
+    {
+        "id": "d9cd9fb41ac49f10",
+        "type": "change",
+        "z": "81f28e04d1430eac",
+        "g": "bf8181823b22cc27",
+        "name": "Creat t0 y modelo datos en flow",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "t",
+                "tot": "flow"
+            },
+            {
+                "t": "move",
+                "p": "data",
+                "pt": "msg",
+                "to": "ME_HORNO",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7528ba242d530a45",
+        "type": "comment",
+        "z": "81f28e04d1430eac",
+        "d": true,
+        "g": "1283db306e006e5e",
+        "name": "Entrada de la info. de los ME procedente de la comunicación MODBUS TCP",
+        "info": "",
+        "x": 370,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "950313e972f4059e",
+        "type": "link in",
+        "z": "81f28e04d1430eac",
+        "d": true,
+        "g": "1283db306e006e5e",
+        "name": "IN_ME_HORNO",
+        "links": [
+            "9164441d9e26b828"
+        ],
+        "x": 300,
+        "y": 200,
+        "wires": [
+            [
+                "2a8fafd4a686da51",
+                "2fe86f4fd282be6b"
+            ]
+        ],
+        "l": true
+    },
+    {
+        "id": "2a8fafd4a686da51",
+        "type": "function",
+        "z": "81f28e04d1430eac",
+        "d": true,
+        "g": "1283db306e006e5e",
+        "name": "DatosMODBUS_TO_FLOWVARS",
+        "func": "flow.set(\"ME_HORNO\",msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2fe86f4fd282be6b",
+        "type": "debug",
+        "z": "81f28e04d1430eac",
+        "d": true,
+        "g": "1283db306e006e5e",
+        "name": "Temp  (actualizada tiempo real)",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload.Temp.Value",
+        "statusType": "msg",
+        "x": 710,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "e858cc4574cdc6d5",
+        "type": "opcua-compact-server",
+        "z": "81f28e04d1430eac",
+        "g": "a340d44ce25a9178",
+        "port": 54840,
+        "endpoint": "",
+        "productUri": "",
+        "acceptExternalCommands": true,
+        "maxAllowedSessionNumber": 10,
+        "maxConnectionsPerEndpoint": 10,
+        "maxAllowedSubscriptionNumber": 100,
+        "alternateHostname": "",
+        "name": "",
+        "showStatusActivities": true,
+        "showErrors": true,
+        "allowAnonymous": true,
+        "individualCerts": false,
+        "isAuditing": false,
+        "serverDiscovery": true,
+        "xmlsetsOPCUA": [],
+        "publicCertificateFile": "",
+        "privateCertificateFile": "",
+        "registerServerMethod": 1,
+        "discoveryServerEndpointUrl": "",
+        "capabilitiesForMDNS": "",
+        "maxNodesPerRead": 1000,
+        "maxNodesPerWrite": 1000,
+        "maxNodesPerHistoryReadData": 100,
+        "maxNodesPerBrowse": 3000,
+        "maxBrowseContinuationPoints": 10,
+        "maxHistoryContinuationPoints": 10,
+        "delayToInit": 1000,
+        "delayToClose": 200,
+        "serverShutdownTimeout": 100,
+        "addressSpaceScript": "\n\n//////////////////////////////////////////////////////////////////\n\n// Instancia de un servidor OPC \n\n// La documentación para entender las clases y métodos que vamos a utilizar la tenéis en:\n//          Documentación general: https://node-opcua.github.io/api_doc/2.32.0/index.html\n//          Documentación namespace: https://node-opcua.github.io/api_doc/2.32.0/interfaces/node_opcua.namespace.html\n\n\n\n//////////////////////////////////////////////////////////////////\n\n\n\nfunction constructAlarmAddressSpace(server, addressSpace, eventObjects, done) {\n  // server = the created node-opcua server\n  // addressSpace = address space of the node-opcua server\n  // eventObjects = add event variables here to hold them in memory from this script\n\n  // internal sandbox objects are:\n  // node = the compact server node,\n  // coreServer = core compact server object for debug and access to NodeOPCUA\n  // this.sandboxNodeContext = node context node-red\n  // this.sandboxFlowContext = flow context node-red\n  // this.sandboxGlobalContext = global context node-red\n  // this.sandboxEnv = env variables\n  // timeout and interval functions as expected from nodejs\n\n\n\n  //////////////////////////////////////////////////////////////////\n\n  // CONFIGURACIONES INICIALES (no modificar)\n\n  //////////////////////////////////////////////////////////////////\n\n  const opcua = coreServer.choreCompact.opcua;\n  // Se accede al nodo raíz del espacio de nombres\n  // De este nodo raíz se \"colgarán\" todos los nodos de nuestro servidor\n  const rootFolder = addressSpace.findNode(\"RootFolder\");\n  const namespace = addressSpace.getOwnNamespace();\n  const LocalizedText = opcua.LocalizedText\n\n\n  // Las variables del flow las obtendremos a partir de this.sandboxFlowContext.\n  // En la variable FlowVars se encontrará ME_HORNO, nuestra variable de flow con toda la info del horno\n  // Ayuda sobre los tipos de scopes en nodered: https://nodered.org/docs/user-guide/context \n  let FlowVars = this.sandboxFlowContext;\n\n\n  //////////////////////////////////////////////////////////////////\n\n  // CREACIÓN DEL DISPOSITIVO\n\n  //////////////////////////////////////////////////////////////////\n\n\n  // Creamos un nuevo nodo tipo objeto que hará las veces de dispositivo\n  // Pasarela IIoT\n  const device = namespace.addObject({\n    organizedBy: addressSpace.rootFolder.objects,\n    browseName: \"PasarelaModbusOPCUA\"\n  });\n\n  //////////////////////////////////////////////////////////////////\n\n  // AÑADIR CARPETAS\n\n  //////////////////////////////////////////////////////////////////\n\n  const ME_HORNO = namespace.addObject({\n    organizedBy: device,\n    browseName: \"ME_HORNO\"\n  });\n\n\n\n  //////////////////////////////////////////////////////////////////\n\n  // CREACIÓN DE NODOS EN EL ADDRESS SPACE PARA LAS VARIABLES DE MEs\n\n  //////////////////////////////////////////////////////////////////\n\n\n  // VARIABLE BOOL SOLO LECTURA\n  // La variable se define como un objeto json ({}). Los atributos de este objetos son los atributos del nodo variable que añadimos al namespace\n  // El browseName y el nodeID sirve para identificar la variable por su nombre o identificador, respectivamente\n  // dataType indica el tipo de dato de la variable. \n  // Value es un objeto con dos métodos: get y set. El método get es una función que devuelve el valor de la variable cuando un cliente realiza una petición.\n\n  // Documentación addVariable: https://node-opcua.github.io/api_doc/2.32.0/interfaces/node_opcua.namespace.html#addvariable \n\n  const Horno_KC = namespace.addVariable({\n    componentOf: ME_HORNO,\n    browseName: \"KC\",\n    displayName: \"KC\",\n    nodeId: \"ns=1;s=KC\",\n    dataType: \"Boolean\",\n    value: {\n\n      get: () => new opcua.Variant({\n        dataType: opcua.DataType.Boolean,\n        value: FlowVars.get(\"ME_HORNO\")[\"KC\"][\"Value\"]\n      })\n    }\n  });\n\n\n  // VARIABLE DOUBLE (REAL en el PLC) SOLO LECTURA\n  // En esta ocasión podemos poner unidades a la variable.\n  // Con el método addAnalogDataItem También es posible incluir un rango [low, high] de valores\n  // documentación addAnalogDataItem: https://node-opcua.github.io/api_doc/2.32.0/interfaces/node_opcua.namespace.html#addanalogdataitem \n\n\n  // Las unidades que soporta el servidor OPC-UA son: ampere, bar, becquerel, byte, centimetre, cubic_centimetre, cubic_centimetre_per_second, cubic_metre, cubic_metre_per_hour, cubic_meter_per_minute,\n  //  curie, curie_per_kilogram, degree, degree_celsius, degree_fahrenheit, dots_per_inch, electron_volt, farad, gigabecquerel, gigabyte, gram, hectopascal, hertz, joule, kelvin, kilo_electron_volt, kilobecquerel,\n  //  kilobyte, kilohertz, kilogram, kilogram_force, kilogram_per_second, kilogram_per_squared_centimeter, kilometre_per_hour, kilopascal, kilowatt, mega_electron_volt, megabyte, megahertz, megapascal, megawatt,\n  //  megawatt_per_minute, metre, metre_per_second, metre_per_second_squared, microsecond, mile_per_hour, millibar, millimetre, millipascal, millisecond, minute, minute_angle, newton, pascal, part_per_million,\n  //  percent, pixel, revolutions_per_minute, revolutions_per_second, second, terabyte, volt, watt\n\n\n  const Horno_Temp = namespace.addAnalogDataItem({\n    componentOf: ME_HORNO,\n    browseName: \"Temp\",\n    displayName: \"Temp\",\n    nodeId: \"ns=1;s=Temp\",\n    description: FlowVars.get(\"ME_HORNO\")[\"Temp\"][\"Descripcion\"],\n    dataType: 'Double',\n    eventSourceOf: ME_HORNO, // Para poder poner una alarma\n    engineeringUnitsRange: {\n      low: 0,\n      high: 400\n    },\n\n    engineeringUnits: opcua.standardUnits.degree_celsius,\n\n    value: {\n      get: () => new opcua.Variant({\n        dataType: opcua.DataType.Double,\n        value: FlowVars.get(\"ME_HORNO\")[\"Temp\"][\"Value\"]\n      })\n    }\n  });\n\n\n\n  // VARIABLE CON ESCRITURA \n  // El valor que escribe el cliente se recoge en el método set del atributo Value. Este método es una función que recibe y procesa el valor indicado por el cliente.\n  // En nuestro caso el valor leído se guarda en un buffer alojado en el contexto flow (variables de flujo). Posteriormente, los valores de este buffer serán procesados y enviados\n  //  al flujo de comunicaciones de modbus para enviarlos al PLC mediante los nodos write de modbus.\n\n  const Horno_MOD_SP_TEnf = namespace.addVariable({\n    componentOf: ME_HORNO,\n    browseName: \"MOD_SP_TEnf\",\n    nodeId: \"ns=1;s=MOD_SP_Temp\",\n    displayName: \"MOD_SP_TEnf\",\n    description:\n      new LocalizedText({ text: FlowVars.get(\"ME_HORNO\")[\"MOD_SP_TEnf\"][\"Descripcion\"], locale: 'es-ES' }),\n\n    dataType: \"Double\",\n    value: {\n      get: () => new opcua.Variant({\n        dataType: opcua.DataType.Double,\n        value: FlowVars.get(\"ME_HORNO\")[\"MOD_SP_TEnf\"][\"Value\"]\n      }),\n\n      set: function (variant) {\n\n        vari = FlowVars.get(\"bufferEnvio\").push({ \"ME_HORNO\": { \"name\": \"MOD_SP_TEnf\", \"value\": variant.value } });\n        return opcua.StatusCodes.Good;\n      }\n    }\n  });\n\n\n\n\n  //////////////////////////////////////////////////////////////////\n\n  // VARIABLES CON HISTÓRICOS\n\n  //////////////////////////////////////////////////////////////////\n\n  // OPC permite guardar datos históricos de las diferentes variables. \n  // Para habilitar esta opción se hará uso del método installHistoricalDataNode\n  // installHistoricalDataNode: \n  addressSpace.installHistoricalDataNode(Horno_Temp);\n  addressSpace.installHistoricalDataNode(Horno_KC);\n\n\n\n\n  //////////////////////////////////////////////////////////////////\n\n  // MÉTODOS\n\n  //////////////////////////////////////////////////////////////////\n\n  // OPC-UA permite servir métodos a los clientes. Estos son un nodo más del namespace que actuan como funciones del servidor que ejecutan acciones específicas: consulta de datos, cálculos, configuraciones, etc.\n  // Tienen parámetros de entrada y devuelven un valor de salida. Son útiles para automatizar operaciones en el servidor, evitando las operaciones manuales con variables e impidiendo el acceso a variables sensibles. \n  // En nuestro caso serán útiles para servir las fases de equipamiento en el servidor OPC-UA\n\n  // A la hora de crear un método utilizaremos el método addMethod del namespace para crear el nódo método. Este nodo se tiene que asociar a un objeto ya existente en el namespace.\n  // Una vez creado el nodo método, éste se asociará a una función javascript con el método bindMethod. Esta función ejecutará las acciones específicas del método. \n  // \n  //        Documentación addMethod: https://node-opcua.github.io/api_doc/2.32.0/interfaces/node_opcua.namespace.html#addmethod\n  //        Documentación bindMethod: https://node-opcua.github.io/api_doc/2.32.0/classes/node_opcua.uamethod.html#bindmethod\n  //                                  https://node-opcua.github.io/api_doc/2.32.0/modules/node_opcua.html#methodfunctor\n\n  // Creación de un método asociado a un objeto del namespace. En este caso al objeto device (PasarelaModbusOPCUA). El método tiene los mismos atributos que un nodo, pero, a mayores, es necesario indicar los parámetros de entrada y los valores de salida.\n  const method = namespace.addMethod(device, {\n\n    browseName: \"Bark\",\n    nodeId: \"ns=1;s=bark\",\n    componentOf: device,\n    inputArguments: [\n      {\n        name: \"nbBarks\",\n        description: { text: \"specifies the number of time I should bark\" },\n        dataType: opcua.DataType.UInt32\n      }, {\n        name: \"volume\",\n        description: { text: \"specifies the sound volume [0 = quiet ,100 = loud]\" },\n        dataType: opcua.DataType.UInt32\n      }\n    ],\n\n    outputArguments: [{\n      name: \"Barks\",\n      description: { text: \"the generated barks\" },\n      dataType: opcua.DataType.String,\n      valueRank: 1\n    }]\n  });\n\n  // Permisos del método\n  method.outputArguments.userAccessLevel = opcua.makeAccessLevelFlag(\"CurrentRead\");\n  method.inputArguments.userAccessLevel = opcua.makeAccessLevelFlag(\"CurrentRead\");\n\n  // Callback del método. Para añadir la función a ejecutar necesitamos asociar una callback al nodo del método\n\n  // Modelo callback: https://node-opcua.github.io/api_doc/2.32.0/modules/node_opcua.html#methodfunctorcallback\n  // Modelo parámetro de salida: https://node-opcua.github.io/api_doc/2.32.0/interfaces/node_opcua.callmethodresultoptions.html \n  method.bindMethod((inputArguments, context, callback) => {\n\n    // Se lee los argumentos de entrada\n    const nbBarks = inputArguments[0].value;\n    const volume = inputArguments[1].value;\n\n\n    // Operaciones a realizar por el método\n    console.log(\"Hello World ! I will bark \", nbBarks, \" times\");\n    console.log(\"the requested volume is \", volume, \"\");\n    const sound_volume = Array(volume).join(\"!\");\n\n\n    if (nbBarks < 100) {\n      const barks = [];\n      for (let i = 0; i < nbBarks; i++) {\n        barks.push(\"Whaff\" + sound_volume);\n      }\n\n\n\n      // Se devuelve el valor de salida\n      const callMethodResult = {\n        statusCode: opcua.StatusCodes.Good,\n        outputArguments: [{\n          dataType: opcua.DataType.String,\n          arrayType: opcua.VariantArrayType.Array,\n          value: barks\n        }]\n      };\n      callback(null, callMethodResult);\n    }\n    else {\n      const callMethodResult = {\n        statusCode: opcua.StatusCodes.Bad,\n        outputArguments: [{\n          dataType: opcua.DataType.String,\n          arrayType: opcua.VariantArrayType.Array,\n          value: \"\"\n        }]\n      };\n      callback(null, callMethodResult);\n    }\n\n\n\n\n  });\n\n\n  let nonExclusiveLimitAlarmType = addressSpace.findEventType('NonExclusiveLimitAlarmType')\n\n  let alarmaTempHorno = namespace.instantiateNonExclusiveLimitAlarm(nonExclusiveLimitAlarmType, {\n    componentOf: ME_HORNO,\n    conditionSource: Horno_Temp,\n    browseName: 'Fallo al calentar el horno',\n    message: 'ATENCIÓN DEMASIADA TEMPERATURA EN EL HORNO',\n    displayName: [\n      new LocalizedText({ text: 'PELIGRO TEMPERATURA HORNO', locale: 'es-ES' }),\n      new LocalizedText({ text: 'DANGER TEMPERATURE FURNANCE', locale: 'en-US' })\n    ],\n    description: 'Blah, blah, blah...',\n    optionals: [\n      'ConfirmedState', 'Confirm'\n    ],\n    inputNode: Horno_Temp,\n    highLimit: 100,\n    highHighLimit: 130,\n    lowLimit: 0\n  })\n\n  eventObjects.Horno_Temp = Horno_Temp\n  eventObjects.alarmaTempHorno = alarmaTempHorno\n\n\n\n  //////////////////////////////////////////////////////////////////\n\n  // CREACIÓN DE VISTAS\n\n  //////////////////////////////////////////////////////////////////\n\n\n  // Gracias al sistema de referencias, OPC-UA permite crear vistas donde poder organizar la información (los nodos) de acuerdo a diferentes criterios de organización: alarmas, magnitudes físicas, pantallas de operador, etc.\n\n\n  // VISTA DE LAS TEMPERATURAS (PODEMOS PONER AQUÍ TODAS LAS TEMPS DEL PROYECTO)\n  // Para crear una vista tenemos que crear un nuevo nodo en la carpeta views del namespace. Para ellos se emplea el método addView del namespace.\n  //      Documentación: https://node-opcua.github.io/api_doc/2.32.0/interfaces/node_opcua.namespace.html#addview \n  //                      https://node-opcua.github.io/api_doc/2.32.0/interfaces/node_opcua.addviewoptions.html \n\n  const viewEx = namespace.addView({\n    \"organizedBy\": addressSpace.rootFolder.views,\n    \"browseName\": \"Temperaturas\"\n  });\n\n\n  // Una vez creada el nodo vista a este se le añaden las referencias que queramos con el método addReference\n  //       Documentación: https://node-opcua.github.io/api_doc/2.32.0/classes/node_opcua.uaview.html#addreference\n  viewEx.addReference({\n    \"referenceType\": \"Organizes\",\n    \"nodeId\": Horno_Temp.nodeId\n  });\n\n  viewEx.addReference({\n    \"referenceType\": \"Organizes\",\n    \"nodeId\": Horno_MOD_SP_TEnf.nodeId\n  });\n\n  // Añadimos una vista con las alarmas\n  const viewAl = namespace.addView({\n    \"organizedBy\": addressSpace.rootFolder.views,\n    \"browseName\": \"Alarmas\"\n  });\n\n  viewAl.addReference({\n    \"referenceType\": \"Organizes\",\n    \"nodeId\": alarmaTempHorno.nodeId\n  });\n\n\n  done();\n}\n",
+        "x": 180,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "508b298355c0fbb5",
+        "type": "comment",
+        "z": "81f28e04d1430eac",
+        "g": "a340d44ce25a9178",
+        "name": "Instancia del servidor OPC UA. En la configuración de este nodo se define el espacio de nombres!",
+        "info": "",
+        "x": 440,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "144b8ee223d034c0",
+        "type": "inject",
+        "z": "81f28e04d1430eac",
+        "g": "adf0a11186ab02f8",
+        "name": "Inject para crear un buffer de datos",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 280,
+        "y": 760,
+        "wires": [
+            [
+                "f0d7a4c5fda958c2"
+            ]
+        ]
+    },
+    {
+        "id": "f0d7a4c5fda958c2",
+        "type": "function",
+        "z": "81f28e04d1430eac",
+        "g": "adf0a11186ab02f8",
+        "name": "CreaBufferEnvio",
+        "func": "flow.set(\"bufferEnvio\",Array());",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "68f7c3c88031909d",
+        "type": "comment",
+        "z": "81f28e04d1430eac",
+        "g": "adf0a11186ab02f8",
+        "name": "Los datos que se escriben por OPC se envian al FLOW  de MODBUS vaciando el buffer de envio",
+        "info": "",
+        "x": 430,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "9ed15525ae8df6c6",
+        "type": "inject",
+        "z": "81f28e04d1430eac",
+        "g": "adf0a11186ab02f8",
+        "name": "PeriodoEnvioOPC_MOD",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "0.4",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 250,
+        "y": 900,
+        "wires": [
+            [
+                "17b5eca7956aece8"
+            ]
+        ]
+    },
+    {
+        "id": "17b5eca7956aece8",
+        "type": "function",
+        "z": "81f28e04d1430eac",
+        "g": "adf0a11186ab02f8",
+        "name": "LecturaBuffer",
+        "func": "msg.payload = flow.get(\"bufferEnvio\").shift()\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 900,
+        "wires": [
+            [
+                "2e0e7a6c5ef1771a"
+            ]
+        ]
+    },
+    {
+        "id": "2e0e7a6c5ef1771a",
+        "type": "switch",
+        "z": "81f28e04d1430eac",
+        "g": "adf0a11186ab02f8",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "ME_HORNO",
+                "vt": "str"
+            },
+            {
+                "t": "hask",
+                "v": "ME_CARGADOR",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 750,
+        "y": 900,
+        "wires": [
+            [
+                "65df92127bbceb2a",
+                "d080f446db3319c8"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "65df92127bbceb2a",
+        "type": "debug",
+        "z": "81f28e04d1430eac",
+        "g": "adf0a11186ab02f8",
+        "name": "debug datos recibidos OPC",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1030,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "d080f446db3319c8",
+        "type": "link out",
+        "z": "81f28e04d1430eac",
+        "g": "adf0a11186ab02f8",
+        "name": "OUT_OPC_ME_HORNO",
+        "mode": "link",
+        "links": [
+            "580180075f17d867"
+        ],
+        "x": 1070,
+        "y": 880,
+        "wires": [],
+        "l": true
+    },
+    {
+        "id": "6b9b791f47cfd057",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-contrib-opcua-server": "1.1.1"
+        }
+    }
+]
