@@ -23,9 +23,9 @@
             "61295f766324f26f",
             "d9cd9fb41ac49f10"
         ],
-        "x": 74,
+        "x": 84,
         "y": 339,
-        "w": 732,
+        "w": 712,
         "h": 162
     },
     {
@@ -226,9 +226,7 @@
         "d": true,
         "g": "1283db306e006e5e",
         "name": "IN_ME_HORNO",
-        "links": [
-            "9164441d9e26b828"
-        ],
+        "links": [],
         "x": 300,
         "y": 200,
         "wires": [
@@ -295,12 +293,12 @@
         "showStatusActivities": true,
         "showErrors": true,
         "allowAnonymous": true,
-        "individualCerts": false,
+        "individualCerts": true,
         "isAuditing": false,
         "serverDiscovery": true,
         "xmlsetsOPCUA": [],
-        "publicCertificateFile": "",
-        "privateCertificateFile": "",
+        "publicCertificateFile": "/data/opcua/certificates/server_key_2048.pem",
+        "privateCertificateFile": "/data/opcua/certificates/server_selfsigned_cert_2048.pem",
         "registerServerMethod": 1,
         "discoveryServerEndpointUrl": "",
         "capabilitiesForMDNS": "",
@@ -502,16 +500,14 @@
         "g": "adf0a11186ab02f8",
         "name": "OUT_OPC_ME_HORNO",
         "mode": "link",
-        "links": [
-            "580180075f17d867"
-        ],
+        "links": [],
         "x": 1070,
         "y": 880,
         "wires": [],
         "l": true
     },
     {
-        "id": "6b9b791f47cfd057",
+        "id": "2e8b3c466233332d",
         "type": "global-config",
         "env": [],
         "modules": {
